@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shaikh Arkan | Developer Portfolio</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    body {
+      background-color: #121212;
+      color: #ffffff;
+      overflow-x: hidden;
+      position: relative;
+    }
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(90deg, #1f1c2c, #928dab);
+      position: relative;
+    }
+    h1 {
+      font-size: 3rem;
+      display: inline-block;
+    }
+    .emoji {
+      font-size: 3rem;
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      transition: top 0.2s ease-in-out;
+      transition: transform 0.2s ease-in-out;
+    }
+    p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .section {
+      padding: 3rem 2rem;
+      animation: slideInUp 1s ease-in-out;
+      position: relative;
+    }
+    .stats, .skills, .services, .contact, .languages {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+    .card, .item {
+      background-color: #1e1e1e;
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(180, 0, 255, 0.2);
+      text-align: center;
+      min-width: 200px;
+      animation: popPop 0.8s ease-in-out;
+    }
+    .item {
+      padding: 1rem 2rem;
+      font-size: 1rem;
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #1f1f1f;
+      font-size: 0.9rem;
+    }
+    @keyframes popPop {
+      0% { transform: scale(0.7); opacity: 0; }
+      60% { transform: scale(1.1); opacity: 1; }
+      100% { transform: scale(1); }
+    }
+    @keyframes slideInUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+    img.placeholder {
+      width: 100%;      /* Make the image responsive */
+      max-width: 500px; /* Maximum width of 500px */
+      height: auto;     /* Maintain aspect ratio */
+      margin: 2rem auto;
+      display: block;
+      border-radius: 16px;
+      border: 2px dashed #555;
+    }
+    a {
+      color: #bb86fc;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Shaikh Arkan</h1>
+    <span class="emoji">😎</span>
+    <p>Professional Developer – Websites, Apps, and Games</p>
+  </header>
+
+  <section class="section" id="my-projects">
+    <h2 style="text-align:center">My Projects</h2>
+    <p style="text-align:center;margin-bottom:1rem">ReGame (Open World Game) and Study Buddy (AI Student App)</p>
+    <img src="C:\Users\shaik\Downloads\image.jpg" alt="Project Image Placeholder" class="placeholder">
+    <p style="text-align:center;font-size:0.9rem">←For Order Email me or Message me on Instagram link below👇</p>
+  </section>
+
+  <section class="section" id="stats">
+    <h2 style="text-align:center">Stats</h2>
+    <div class="stats">
+      <div class="card">
+        <h3>275</h3>
+        <p>Clients</p>
+      </div>
+      <div class="card">
+        <h3>280</h3>
+        <p>Orders Completed</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="skills">
+    <h2 style="text-align:center">Skills</h2>
+    <div class="skills">
+      <div class="item">Websites Developer</div>
+      <div class="item">Apps Developer</div>
+      <div class="item">Simple Games Developer</div>
+    </div>
+  </section>
+
+  <section class="section" id="languages">
+    <h2 style="text-align:center">Languages</h2>
+    <div class="languages">
+      <div class="item">JAVA</div>
+      <div class="item">CSS</div>
+      <div class="item">HTML</div>
+      <div class="item">C#</div>
+    </div>
+  </section>
+
+  <section class="section" id="services">
+    <h2 style="text-align:center">Services</h2>
+    <div class="services">
+      <div class="item">Making Websites</div>
+      <div class="item">Making Apps</div>
+      <div class="item">Making Simple Games</div>
+    </div>
+  </section>
+
+  <section class="section" id="contact">
+    <h2 style="text-align:center">Contact Me</h2>
+    <div class="contact">
+      <div class="item"><a href="mailto:shaikharkan2010@gmail.com">Email Me</a></div>
+      <div class="item"><a href="https://www.instagram.com/real.master_/" target="_blank">Instagram</a></div>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Shaikh Arkan. All Rights Reserved.
+  </footer>
+
+  <script>
+    // Get the emoji element
+    const emoji = document.querySelector('.emoji');
+    
+    // Section positions
+    const sections = [
+      document.getElementById('my-projects'),
+      document.getElementById('stats'),
+      document.getElementById('skills'),
+      document.getElementById('languages'),
+      document.getElementById('services'),
+      document.getElementById('contact')
+    ];
+    
+    window.addEventListener('scroll', () => {
+      let scrollPosition = window.scrollY;
+      
+      sections.forEach((section, index) => {
+        const sectionTop = section.offsetTop - 200; // Adjust for the scroll offset
+        const sectionBottom = section.offsetTop + section.offsetHeight;
+
+        if (scrollPosition >= sectionTop && scrollPosition <= sectionBottom) {
+          emoji.style.top = `${sectionTop + 20}px`; // Move emoji to the section top
+          emoji.style.transform = `translateX(-50%) translateY(${scrollPosition - sectionTop}px)`;
+        }
+      });
+    });
+  </script>
+</body>
+</html>
